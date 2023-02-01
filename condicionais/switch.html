@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+</head>
+<body>
+    <label for="clima">Selecione o clima de hoje: </label>
+    <select id="clima">
+        <option value="">--Faça uma escolha--</option>
+        <option value="sol">Ensolarado</option>
+        <option value="chuva">Chovendo</option>
+        <option value="neve">Nevando</option>
+        <option value="nublado">nublado</option>
+    </select>
+
+<p></p>
+
+<script>
+    var select = document.querySelector('select');
+    var para = document.querySelector('p');
+
+    select.addEventListener('change', setClima);
+
+    function setClima(){
+        var escolha = select.value;
+
+        switch(escolha){
+            case "sol": 
+                para.textContent = 'Está bom e ensolarado lá fora hoje. Use shorts! Vá à praia ou ao parque e tome um sorvete.';
+                break;
+            case "chuva": 
+                para.textContent = 'A chuva cai lá fora; leve uma capa de chuva e um guarda chuva e não fique muito tempo fora.';
+                break;
+            case "neve": 
+                para.textContent = 'A neve esta caindo - esta congelando! Melhor ficar em casa com uma xícara de chocolate quente ou ir construir um boneco de neve.';
+                break;
+            case "nublado": 
+                para.textContent = 'Não está chovendo, mas o céu está cinza e sombrio; pode virar a qualquer minuto, então leve uma capa de chuva para garantir.';
+                break;
+            default: 
+                para.textContent = '';
+        }
+    }
+</script>    
+
+</body>
+</html>
